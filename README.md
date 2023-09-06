@@ -4,6 +4,6 @@
 
 
 
-nmp run dev
+##npm run dev
 
 Aula de fundametos  de node 
