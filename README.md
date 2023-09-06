@@ -9,7 +9,7 @@ node.js com HTTPm Crypto e File System e sobre fundametos HTTP como requests, he
 foi abordado o uso de streams no node.js e como aplica-las para realizar operações assíncronas e pacias no back-end.
 
 
-para executar o projeto usar:
+# para executar o projeto usar:
 
 npm run dev 
 
