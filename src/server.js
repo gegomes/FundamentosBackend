@@ -1,6 +1,7 @@
 import http from 'node:http' // modulo interno 
 import { json } from './middlewares/json.js'
 import { routes } from './routes.js'
+import { extractQueryParams } from './utils/extract-query-params.js'
 
 // **Metods**
 
@@ -37,8 +38,14 @@ const server = http.createServer(async (req, res) => {
     if(route){
 
         const routerParams = req.url.match(route.path)
-         req.params = {...routerParams.groups}
-        console.log(req.params);
+
+
+        const { query, ...params} = routerParams.groups
+
+        
+        req.params = params
+        req.query = query ? extractQueryParams(query) : {}  // condicao caso seja vazio retorna  {}
+
         return route.handler(req, res)
 
     }
